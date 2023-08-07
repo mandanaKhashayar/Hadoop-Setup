@@ -10,14 +10,14 @@ class hadoop {
   $user = "vagrant"
 
   exec { "download_hadoop":
-    command => "wget -O /vagrant/hadoop.tar.gz http://apache.mirrors.spacedump.net/hadoop/common/hadoop-${hadoop_ver}/hadoop-${hadoop_ver}.tar.gz",
+    command => "wget -O /vagrant/hadoop.tar.gz https://archive.apache.org/dist/hadoop/common/hadoop-${hadoop_ver}/hadoop-${hadoop_ver}.tar.gz",
     path => $path,
     unless => ["ls /usr/local/ | grep hadoop-${hadoop_ver}", "test -f /vagrant/hadoop.tar.gz"],
     require => Package["openjdk-8-jdk"], 
   }
 
   exec { "unpack_hadoop" :
-    command => "tar -zxf /vagrant/hadoop.tar.gz -C /usr/local/",
+    command => "sudo tar -zxf /vagrant/hadoop.tar.gz -C /usr/local/",
     path => $path,
     creates => "${hadoop_home}-${hadoop_ver}",
     require => Exec["download_hadoop"],    
@@ -98,7 +98,6 @@ class hadoop {
       owner => $user,
       group => $user,
   }
-  
 }
 
 
