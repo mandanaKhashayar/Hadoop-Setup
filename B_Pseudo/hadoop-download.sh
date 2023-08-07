@@ -13,7 +13,7 @@ fi
 if [ ! -d "$HADOOP_HOME" ] ; then
     sudo mkdir -p "$HADOOP_ROOT"
     pushd "$HADOOP_ROOT"
-    wget http://apache.mirrors.spacedump.net/hadoop/common/$HADOOP_VER/$HADOOP_VER.tar.gz
+    wget https://archive.apache.org/dist/hadoop/common/$HADOOP_VER/$HADOOP_VER.tar.gz
     tar -zxf $HADOOP_VER.tar.gz
 #    rm $HADOOP_VER.tar.gz
     mv $HADOOP_VER/* $HADOOP_ROOT    
