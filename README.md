@@ -14,7 +14,8 @@ git config --global core.autocrlf true
 Different configurations for setting up Hadoop (inside Vagrant)
 
 
-**A_Standalone** A single node standalone setup. You need to manually run commands inside the VM:
+**A_Standalone** A single node standalone setup which is a lite-version of Hadoop; you can run MapReduce jobs locally, but you do not connect to a HDFS filesystem or a Yarn resource manager. 
+To setup, you need to manually run commands inside the VM:
 
 ```
 cd /vagrant
@@ -22,7 +23,8 @@ cd /vagrant
 ./hadoop-setup-standalone.sh
 ```
 
-**B_Pseudo** Single node, running in Pseudo-distributed mode. Commands:
+**B_Pseudo** Single node, running in Pseudo-distributed mode. In pseudo-distributed mode you set up HDFS and (eventually) YARN to work on a single computer. This is useful for testing purposes.
+Commands:
 
 ```
 cd /vagrant
@@ -32,6 +34,6 @@ cd /vagrant
 ./hadoop-dfs-populate.sh
 ```
 
-**C_Cluster** Three worker nodes and one master. Provisioned with the help of Puppet. Just `vagrant up` and everything should be fine.
+**C_Cluster** Three worker nodes and one master. In the fully distributed mode you extend the Pseudo-Distributed mode with more computers and setup HDFS and YARN so that they may work with all of these computers. Provisioned with the help of Puppet. Just `vagrant up` and everything should be fine.
 
 **D_Docker_Cluster** Work in Progress, not ready yet.
