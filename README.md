@@ -33,6 +33,7 @@ cd /vagrant
 ./hadoop-setup-pseudo-distributed.sh
 ./hadoop-dfs-populate.sh
 ```
+After running these commands, it is important to exit the vagrant ssh and again connect to it.
 
 **C_Cluster** Three worker nodes and one master. In the fully distributed mode you extend the Pseudo-Distributed mode with more computers and setup HDFS and YARN so that they may work with all of these computers. Provisioned with the help of Puppet. Just `vagrant up` and everything should be fine.
 
