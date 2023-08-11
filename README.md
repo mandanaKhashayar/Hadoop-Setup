@@ -33,7 +33,13 @@ cd /vagrant
 ./hadoop-setup-pseudo-distributed.sh
 ./hadoop-dfs-populate.sh
 ```
-After running these commands, it is important to exit the vagrant ssh and again connect to it.
+After running these commands, it is important to exit the vagrant ssh and again connect to it. To test that you can run these commands.
+
+```
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.1.jar wordcount input output
+
+hdfs dfs -cat output/*
+```
 
 **C_Cluster** Three worker nodes and one master. In the fully distributed mode you extend the Pseudo-Distributed mode with more computers and setup HDFS and YARN so that they may work with all of these computers. Provisioned with the help of Puppet. Just `vagrant up` and everything should be fine.
 
