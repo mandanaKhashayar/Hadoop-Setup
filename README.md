@@ -41,6 +41,10 @@ hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.1.j
 hdfs dfs -cat output/*
 ```
 
-**C_Cluster** Three worker nodes and one master. In the fully distributed mode you extend the Pseudo-Distributed mode with more computers and setup HDFS and YARN so that they may work with all of these computers. Provisioned with the help of Puppet. Just `vagrant up` and everything should be fine.
+**C_Cluster** Three worker nodes and one master. In the fully distributed mode you extend the Pseudo-Distributed mode with more computers and setup HDFS and YARN so that they may work with all of these computers. Provisioned with the help of Puppet. Just `vagrant up` and everything should be fine. To run your hadoop run 
+
+```
+vagrant ssh master
+```
 
 **D_Docker_Cluster** Work in Progress, not ready yet.
