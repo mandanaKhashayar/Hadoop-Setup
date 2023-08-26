@@ -1,3 +1,4 @@
+
 ## Important note for windows users
 
 If you are a windows user who wants to clone the code and then use it, remember that a typical configuration of **Git on windows** is to convert Unix-style \n-only line breaks to Windows-style \r\n line breaks on checking files out and re-converting to \n-only line breaks on committing. This would result in **env: bash\r: No such file or directory** after run the following scripts. So, to make Git check out files with Unix-style file endings on Windows - at least temporarily - use:
@@ -11,8 +12,12 @@ git config --global core.autocrlf true
 
 # Hadoop-Setup
 
-Different configurations for setting up Hadoop (inside Vagrant)
+Different configurations for setting up Hadoop (inside Vagrant).
+For these setup we need to install vagrant-hostmanager
 
+```
+vagrant plugin install vagrant-hostmanager
+```
 
 **A_Standalone** A single node standalone setup which is a lite-version of Hadoop; you can run MapReduce jobs locally, but you do not connect to a HDFS filesystem or a Yarn resource manager. 
 To setup, you need to manually run commands inside the VM:
